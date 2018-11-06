@@ -21,9 +21,12 @@
                         <div class="meta">
                             @site.Domain
                         </div>
-                        <div class="description">
-                            Status: @((int)site.LastStatus)
-                        </div>
+                        @if (site.LastStatus != HttpStatusCode.ServiceUnavailable)
+                        {
+                            <div class="description">
+                                Status: @((int)site.LastStatus)
+                            </div>
+                        }
                     </div>
                     @if (site.IsAvailable)
                     {
@@ -33,7 +36,7 @@
                     }
                     else
                     {
-                        <div class="ui bottom attached button green">
+                        <div class="ui bottom attached button red">
                             Unavailable
                         </div>
                     }
