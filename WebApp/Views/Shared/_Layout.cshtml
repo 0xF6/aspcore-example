@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+<!-- (C) Yuuki Wesp @DateTime.Now.Year -->
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="application-name" content="SiteStatus">
+    <meta name="description" content="Information and status of various sites">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon">
+    <title>@ViewData["Title"] - WebApp</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css" 
+          integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" 
+          crossorigin="anonymous">
+    
+
+    <!-- Begin Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118991745-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118991745-2');
+    </script>
+    <!-- End Google Analytics -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js" 
+        integrity="sha256-x1fC6BXl6BwnUhfQqqqC0Fd/n12wH+u8u9va6+E7xaA=" 
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <noscript>
+        &lt;div class="nojs-message"&gt;
+        Please enable JavaScript in your browser to access this site.
+        &lt;/div&gt;
+    </noscript>
+
+    <div class="container body-content">
+        <div id="body_container" class="ui container">
+            @RenderBody()
+        </div>
+    </div>
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

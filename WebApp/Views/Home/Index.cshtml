@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@using System.Net
+@model List<WebSite>
+
+
+
+<div class="ui container grid">
+
+    @foreach (var site in Model)
+    {
+        <div class="five wide column">
+            <div class="ui section">
+                <div class="ui card">
+                    <div class="content">
+                        <img class="right floated ui image" height="16" width="16" src="http://www.google.com/s2/favicons?domain=@(site.Domain)" alt="">
+                        <div class="header">
+                            @site.Name
+                        </div>
+                        <div class="meta">
+                            @site.Domain
+                        </div>
+                        <div class="description">
+                            Status: @((int)site.LastStatus)
+                        </div>
+                    </div>
+                    @if (site.IsAvailable)
+                    {
+                        <div class="ui bottom attached button green">
+                            Available
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="ui bottom attached button green">
+                            Unavailable
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>

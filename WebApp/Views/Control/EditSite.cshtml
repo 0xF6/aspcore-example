@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "EditSite";
+}
+@model WebSite
+
+<div class="center aligned ui grid" style="padding-top: calc(100vw / 8)">
+    <div class="ten wide left aligned column">
+        <form class="ui form large" asp-action="EditSite">
+            @Html.HiddenFor(m => m.UID, new { Value = Model.UID })
+            <div class="ui stacked segment">
+                <div class="field">
+                    <label>Domain</label>
+                    @Html.TextBoxFor(x => x.Domain, new {placeholder = "www.domain.com", Value = Model.Domain, pattern=@"^www\..*" }) 
+                    
+                </div>
+                <div class="field">
+                    <label>Name</label>
+                    @Html.TextBoxFor(x => x.Name, new {placeholder = "Name", Value = Model.Name })
+                </div>
+                <div class="field">
+                    <label>Interval (in second)</label>
+                    @Html.TextBoxFor(x => x.Interval, new {type = "number", placeholder = "Interval", Value = Model.Interval })
+                </div>
+                <button class="ui button" type="submit">Save</button>
+                <a href="@Url.Action("ViewListSites")" class="ui button">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

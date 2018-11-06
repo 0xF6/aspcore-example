@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+@model LoginViewModel
+
+<div class="center aligned ui grid" style="padding-top: calc(100vw / 8)">
+    <div class="ten wide left aligned column">
+        <form class="ui form large" asp-action="Auth">
+            <div class="ui stacked segment">
+                <div class="field">
+                    <label>Login</label>
+                    <input type="text" name="Login" placeholder="Login">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="Password" placeholder="Password">
+                </div>
+                @if (Model != null && Model.IsError)
+                {
+                    <div class="ui error message">
+                        <ul class="list">
+                            <li>Incorrect username or password.</li>
+                        </ul>
+                    </div>
+                }
+                <button class="ui button" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>

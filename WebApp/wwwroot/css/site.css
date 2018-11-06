@@ -1,0 +1,31 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    min-width: 320px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.4285em;
+    color: #000000;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #DADADA;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #DADADA;
+}
+
+.body-content {
+    padding-top: 1.2rem
+}
+body > .grid {
+  height: 100%;
+}
+.column {
+  max-width: 450px;
+}
+  
