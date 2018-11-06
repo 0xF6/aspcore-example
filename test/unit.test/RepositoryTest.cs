@@ -67,9 +67,7 @@
         [OneTimeTearDown]
         public void Clear()
         {
-            var site = WebSite.FirstOrDefault(x => true);
-            Assert.True(site.Remove());
-            Assert.False(WebSite.Any());
+            new Storage().Database.EnsureDeleted();
         }
     }
 }
